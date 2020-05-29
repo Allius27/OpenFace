@@ -90,6 +90,8 @@ namespace Utilities
 
 		bool has_bounding_boxes;
 
+		void SetCameraIntrinsics(float fx, float fy, float cx, float cy);
+
 	private:
 
 		// Blocking copy and move, as it doesn't make sense to have several readers pointed at the same source
@@ -108,8 +110,6 @@ namespace Utilities
 
 		// Could optionally read the bounding box locations from files (each image could have multiple bounding boxes)
 		std::vector<std::vector<cv::Rect_<float> > > bounding_boxes;
-
-		void SetCameraIntrinsics(float fx, float fy, float cx, float cy);
 
 		bool image_focal_length_set;
 		bool image_optical_center_set;
